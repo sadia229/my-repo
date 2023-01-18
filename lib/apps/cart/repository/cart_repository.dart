@@ -16,8 +16,7 @@ class CartRepository {
           await BaseClient.post(url: Urls.addToCartUrl, payload: payload);
       if (response.statusCode == 200) {
         CartModel cartModel = CartModel.fromJson(response.data);
-         return cartModel;
-
+        return cartModel;
       } else {
         throw "Error";
       }

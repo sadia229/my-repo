@@ -23,6 +23,6 @@ class CartNotifier extends StateNotifier<List<Data>> {
    addCart({Data? payload}) async {
     CartModel response = await cartRepository.saveCart(payload: payload);
     List<Data> data = response.data!.map((e) => e).toList();
-    state = [...state, response];
+    //state = [...state, response];
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:practice/apps/cart/screen/cart_page.dart';
+import 'package:practice/apps/cart/screen/login_screen.dart';
 import 'package:practice/apps/cart/screen/products_details.dart';
 import 'package:practice/apps/cart/screen/products_view.dart';
 
@@ -8,6 +9,10 @@ class RouteGenerator {
     final Map? arguments = settings.arguments as Map?;
     switch (settings.name) {
       case '/login':
+        return MaterialPageRoute(
+          builder: (_) => const LoginScreen(),
+        );
+      case '/product':
         return MaterialPageRoute(
           builder: (_) => const ProductsScreen(),
         );

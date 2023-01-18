@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "138325949593",
+    "project_id": "connect-df41a",
+    "storage_bucket": "connect-df41a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:138325949593:android:15fae9f8b42749f2de4c08",
+        "android_client_info": {
+          "package_name": "com.example.practice"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "138325949593-iq2mu5heq7rrrot7quo495aa45pfpjua.apps.googleusercontent.com",
+          "client_type": 3
+        }
+
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHYTg6FzAk8UByIUpKDZzLTFAW1UOxDqc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "138325949593-iq2mu5heq7rrrot7quo495aa45pfpjua.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
