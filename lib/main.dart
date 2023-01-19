@@ -1,10 +1,14 @@
-
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'general/routes/route_generator.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
-void main(){
+void main() async{
   WidgetsFlutterBinding.ensureInitialized();
+  Firebase.initializeApp();
+  await Hive.initFlutter();
   runApp(
     const ProviderScope(
       child: MyApp(),

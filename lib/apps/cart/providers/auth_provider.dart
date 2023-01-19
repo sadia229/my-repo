@@ -1,23 +1,18 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:practice/apps/cart/model/cart_model.dart';
+import 'package:dio/dio.dart' as dio;
 import 'package:practice/apps/cart/repository/auth_repository.dart';
-import 'package:practice/apps/cart/repository/cart_repository.dart';
+import '../../../general/helpers/shared_prefs.dart';
 
-final authNotifyProvider =
-    StateNotifierProvider<AuthNotifier, List<Data>>((ref) {
-  return AuthNotifier(authRepository: AuthRepository());
-});
-
-class AuthNotifier extends StateNotifier<List<Data>> {
-  AuthRepository authRepository;
-
-  AuthNotifier({required this.authRepository}) : super([]) {
-
-  }
-
-  addCart({Data? payload}) async {
-    CartModel response = await authRepository.login(payload: payload);
-    List<Data> data = response.data!.map((e) => e).toList();
-    //state = [...state, response];
+class AuthNotifier {
+  login(String email, String password) async {
+    dio.FormData formData = dio.FormData.fromMap({
+      'email': email,
+      'password': password,
+    });
+    dio.Response response = await AuthRepository.logIn(payload: formData);
+    if (response.data['status'] == true) {
+      await SharedPrefs.saveToken(response.data['token']);
+    } else {
+      print("status code error from sadia");
+    }
   }
 }

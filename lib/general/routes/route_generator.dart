@@ -3,6 +3,7 @@ import 'package:practice/apps/cart/screen/cart_page.dart';
 import 'package:practice/apps/cart/screen/login_screen.dart';
 import 'package:practice/apps/cart/screen/products_details.dart';
 import 'package:practice/apps/cart/screen/products_view.dart';
+import 'package:practice/apps/cart/screen/token_page.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -26,6 +27,13 @@ class RouteGenerator {
             arguments!['productId'],
           ),
         );
+
+      case '/tokenPage':
+        return MaterialPageRoute(
+          builder: (_) => TokenScreen(),
+        );
+
+
       // case '/billCollection':
       //   return MaterialPageRoute(
       //     builder: (_) => const BillCollectionScreen(),

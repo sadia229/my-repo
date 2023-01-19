@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:practice/general/constants/constants.dart';
+import '../helpers/shared_prefs.dart';
 
 class BaseClient {
   static Future<BaseOptions> getBasseOptions() async {
@@ -12,7 +12,7 @@ class BaseClient {
         "Accept": "application/json",
         'Content-type': 'application/json',
         'X-Requested-With': 'XMLHttpRequest',
-        'Authorization': 'Bearer $token',
+        'Authorization': 'Bearer ${await SharedPrefs.saveToken('token')}',
       },
     );
 
